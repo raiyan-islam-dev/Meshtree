@@ -27,7 +27,7 @@ Turn a folder of photos into a textured 3D model — no scanner, no LiDAR rig, j
 ## Running locally
 
 Requirements:
-- macOS 12 Monterey or later, **Apple Silicon strongly recommended** (Object Capture also runs on Intel Macs with a 4GB+ discrete GPU, but not on integrated graphics). The app checks `PhotogrammetrySession.isSupported` on launch and will tell you if your Mac can't run it.
+- macOS 13 Ventura or later, **Apple Silicon strongly recommended** (Object Capture also runs on Intel Macs with a 4GB+ discrete GPU, but not on integrated graphics). The app checks `PhotogrammetrySession.isSupported` on launch and will tell you if your Mac can't run it.
 - Xcode 13 or later
 
 ```bash

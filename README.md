@@ -35,13 +35,21 @@ cd Meshtree
 open MeshTree.xcodeproj
 ```
 
+Select the MeshTree scheme in Xcode and press **⌘R** to run it.
+
+## How it works
+
+Meshtree uses Apple's Object Capture and `PhotogrammetrySession` to reconstruct the 3D model. Meshtree is an app built around it to handle the photos, grid, quality, progress, preview and export.
+
+When you hit Start Reconstruction, it first checks if your Mac supports photogrammetry. Then it creates a temp folder, copies the photos from the grid into it, and starts the reconstruction with the chosen quality preset while showing a progress bar. Once it's done, it shows the 3D model and deletes the temporary copies of the photos.
+
 ## Credits
 
 Built with Apple's [RealityKit Object Capture](https://developer.apple.com/documentation/realitykit/realitykit-object-capture) and [SceneKit](https://developer.apple.com/documentation/scenekit). Made for [Stardance](https://stardance.hackclub.com), by Hack Club.
 
 ## AI usage
 
-AI was used to learn debugging, polishing, for drafting this README, and for some code snippets.
+AI was used to learn debugging, to polish and draft this README, and for some code snippets.
 
 ## License
 

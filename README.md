@@ -15,6 +15,11 @@ Meshtree turns an overlapping photoset of an object into a 3D model locally.
 5. The process is decently heavy on memory so try to make sure enough memory is free.
 6. Once done, you'll get your 3D model and there's also an option to save a .usdz file.
 
+## Sample Datasets
+
+Here's a photoset to test with:
+- [Apple Object Capture sample (36 photos of a rock)](https://developer.apple.com/documentation/realitykit/creating-a-photogrammetry-command-line-app) — download the sample project, the photoset is in `Data/Rock36Images.zip`
+
 ## Features
 
 - Clean view of all the photos so you can spot bad photos.

@@ -18,7 +18,7 @@ Meshtree turns an overlapping photoset of an object into a 3D model locally.
 ## Sample Datasets
 
 Here's a photoset to test with:
-- Click [this Apple page](https://developer.apple.com/documentation/realitykit/creating-a-photogrammetry-command-line-app), hit the Download button, unzip it. Inside you'll find a `Data` folder, and inside that a `Rock36Images.zip` — unzip that too, and you've got your photoset.
+- Click [this Apple page](https://developer.apple.com/documentation/realitykit/creating-a-photogrammetry-command-line-app), hit the Download button, unzip it. Inside you'll find a `Data` folder, and inside that a `Rock36Images.zip`, unzip that too, and you've got your photoset.
 
 ## Features
 
@@ -54,7 +54,7 @@ Built with Apple's [RealityKit Object Capture](https://developer.apple.com/docum
 
 ## AI usage
 
-AI was used to learn debugging, to polish and draft this README, and for some code snippets.
+AI was used to learn debugging and for some code snippets. AI pointed out typos and grammar mistakes in this readme which I fixed by hand.
 
 ## License
 

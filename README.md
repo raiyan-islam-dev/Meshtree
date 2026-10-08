@@ -1,34 +1,31 @@
-# Meshtree
+# MeshTree
 
-Meshtree turns an overlapping photoset of an object into a 3D model locally.
+MeshTree turns an overlapping photoset into 
 
 ![Meshtree demo](docs/demo.gif)
 
-**[Download the latest build](https://github.com/raiyan-islam-dev/Meshtree/releases/latest)**
-
 ## Quick start
 
-1. Download the .dmg file from releases and drag the Meshtree app into your Applications folder.
-2. If macOS refuses to open the app and says Apple could not verify "MeshTree" is free of malware that may harm your Mac or compromise your privacy, go to System Settings, Privacy & Security, scroll down to the bottom and click Open Anyway.
-3. Open the app, click Select Folder and select a folder containing your overlapping photoset.
-4. Choose a quality preset and hit Start Reconstruction.
-5. The process is decently heavy on memory so try to make sure enough memory is free.
-6. Once done, you'll get your 3D model and there's also an option to save a .usdz file.
+1. Download the .dmg file from releases.
+2. If macOS refuses to open the app, go to system settings, Privacy & security, scroll down to the bottom and click Open Anyway.
+3. After opening the app, click Select Folder button and select a folder containing a photoset.
+4. Choose a quality preset.
+5. Click "Start Reconstruction".
+6. The memory usage is pretty heavy, so try to make sure there's enough memory free.
+7. After the reconstruction is done, a preview will show the 3D model and there's also a button for saving the model as .usdz file.
 
-## Sample Datasets
+## Sample Dataset
 
-Here's a photoset to test with:
-- Click [this Apple page](https://developer.apple.com/documentation/realitykit/creating-a-photogrammetry-command-line-app), hit the Download button, unzip it. Inside you'll find a `Data` folder, and inside that a `Rock36Images.zip`, unzip that too, and you've got your photoset.
+Here's a dataset to test with:
+- Click [this Apple page](https://developer.apple.com/documentation/realitykit/creating-a-photogrammetry-command-line-app), hit the Download button, unzip it. Inside you'll find a `Data` folder, and inside that a `Rock36Images.zip`, unzip that too, and you've got your photoset
 
-## Features
+##Features
 
-- Clean view of all the photos so you can spot bad photos.
-- Local 3D model reconstruction.
-- 3D preview.
-- One click .usdz export.
-- Cancel mid reconstruction.
+- Organised view of all photos.
+- Completely local.
+- .usdz export.
 
-## Running locally
+## Running Locally
 
 Requirements:
 - macOS Ventura (13) or later, **Apple Silicon strongly recommended**. The app checks `PhotogrammetrySession.isSupported` on launch and will tell you if your Mac can't run it.
@@ -40,13 +37,11 @@ cd Meshtree
 open MeshTree.xcodeproj
 ```
 
-Select the MeshTree scheme in Xcode and press **⌘R** to run it.
-
 ## How it works
 
-Meshtree uses Apple's Object Capture and `PhotogrammetrySession` to reconstruct the 3D model. Meshtree is an app built around it to handle the photos, grid, quality, progress, preview and export.
+MeshTree is based on Apple's Object Capture. It uses Apple's `PhotogrammetrySession` to make the 3D model.
 
-When you hit Start Reconstruction, it first checks if your Mac supports photogrammetry. Then it creates a temp folder, copies the photos from the grid into it, and starts the reconstruction with the chosen quality preset while showing a progress bar. Once it's done, it shows the 3D model and deletes the temporary copies of the photos.
+When reconstruction starts, it first checks if your Mac supports photogrammetry. If it does, it creates a temporary folder, copies the photos from the grid into it, and starts reconstruction with the chosen quality preset. Once it's done, it shows a preview of the 3D model, allowing you to save it, and then deletes the temporary file
 
 ## Credits
 
@@ -54,7 +49,7 @@ Built with Apple's [RealityKit Object Capture](https://developer.apple.com/docum
 
 ## AI usage
 
-AI was used to learn debugging and for some code snippets. AI pointed out typos and grammar mistakes in this readme which I fixed by hand.
+AI was used to learn debugging and for some code snippets. 
 
 ## License
 

@@ -19,7 +19,7 @@ MeshTree turns an overlapping photoset into
 Here's a dataset to test with:
 - Click [this Apple page](https://developer.apple.com/documentation/realitykit/creating-a-photogrammetry-command-line-app), hit the Download button, unzip it. Inside you'll find a `Data` folder, and inside that a `Rock36Images.zip`, unzip that too, and you've got your photoset
 
-##Features
+## Features
 
 - Organised view of all photos.
 - Completely local.

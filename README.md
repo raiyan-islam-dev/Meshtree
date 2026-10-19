@@ -1,6 +1,6 @@
 # MeshTree
 
-MeshTree turns an overlapping photoset into 
+MeshTree turns an overlapping photoset into a 3D model 
 
 ![Meshtree demo](docs/demo.gif)
 
@@ -24,6 +24,7 @@ Here's a dataset to test with:
 - Organised view of all photos.
 - Completely local.
 - .usdz export.
+- 
 
 ## Running Locally
 

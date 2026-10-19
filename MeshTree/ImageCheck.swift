@@ -29,7 +29,7 @@ struct CaptureImage: Identifiable, Equatable {
 
 enum ImageCheck {
     static let minDimension = 300
-    static let blurVarianceThreshold: Double = 45
+    static let blurVarianceThreshold: Double = 200
 
     static func analyze(url: URL) -> ImageFlag {
         guard let source = CGImageSourceCreateWithURL(url as CFURL, nil) else {
@@ -120,3 +120,4 @@ enum ImageCheck {
         return (sumSq / n) - (mean * mean)
     }
 }
+

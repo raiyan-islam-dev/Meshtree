@@ -24,7 +24,7 @@ struct FolderPickerView: View {
     @State private var selectedDetail: PhotogrammetrySession.Request.Detail = .medium
     @State private var session: PhotogrammetrySession?
     @State private var currentWorkingDir: URL?
-
+    @State private var imageFlags: [URL: ImageFlag] = [:]
     private let columns = [GridItem(.adaptive(minimum: 75), spacing: 8)]
 
     var body: some View {
@@ -49,6 +49,17 @@ struct FolderPickerView: View {
                                 }
                                 .frame(width: 75, height: 75)
                                 .clipShape(RoundedRectangle(cornerRadius: 6))
+                                .overlay(alignment: .bottomLeading) {
+                                    if let flag = imageFlags[imageURL], flag != .none {
+                                        Text(flag.lable)
+                                            .font(.system(size: 8, weight: .bold))
+                                            .foregroundColor(.white)
+                                            .padding(.horizontal, 4)
+                                            .padding(.vertical, 2)
+                                            .background(Capsule().fill(Color.orange.opacity(0.9)))
+                                            .padding (4)
+                                    }
+                                }
                                 .overlay(alignment: .topTrailing) {
                                     Button {
                                         removeImage(imageURL)
@@ -156,9 +167,22 @@ struct FolderPickerView: View {
         let files = (try? FileManager.default.contentsOfDirectory(at: url, includingPropertiesForKeys: nil))?
             .filter { validExtensions.contains($0.pathExtension.lowercased()) } ?? []
 
-        // print("found \(files.count) valid images in folder")
 
         inputImageURLs = files
+        imageFlags = [:]
+
+        Task {
+            let access = url.startAccessingSecurityScopedResource()
+            defer { if access { url.stopAccessingSecurityScopedResource() } }
+            var result: [URL: ImageFlag] = [:]
+            for file in files {
+                result[file] = ImageCheck.analyze(url: file)
+                await Task.yield()
+            }
+            if selectedFolderURL == url {
+                imageFlags = result
+            }
+        }
         statusText = "Selected: \(url.lastPathComponent) (\(files.count) images)"
     }
     

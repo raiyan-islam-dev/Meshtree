@@ -21,15 +21,19 @@ Here's a dataset to test with:
 
 ## Features
 
-- Organised view of all photos.
-- Completely local.
+- Select a folder or drag one in, then remove unwanted photos from the grid.
+- Flags blurry and low-resolution photos with a badge.
+- Five quality presets, from Low to Ultra.
+- Progress bar and a cancel button.
+- Built-in 3D preview.
 - .usdz export.
-- 
+- Completely local.
 
 ## Running Locally
 
 Requirements:
-- macOS Ventura (13) or later, **Apple Silicon strongly recommended**. The app checks `PhotogrammetrySession.isSupported` on launch and will tell you if your Mac can't run it.
+
+- macOS Ventura (13) or later, **Apple Silicon strongly recommended**. The app checks `PhotogrammetrySession.isSupported` when you click Start Reconstruction and will tell you if your Mac can't run it.
 - Xcode 26 or later
 
 ```bash
@@ -42,7 +46,9 @@ open MeshTree.xcodeproj
 
 MeshTree is based on Apple's Object Capture. It uses Apple's `PhotogrammetrySession` to make the 3D model.
 
-When reconstruction starts, it first checks if your Mac supports photogrammetry. If it does, it creates a temporary folder, copies the photos from the grid into it, and starts reconstruction with the chosen quality preset. Once it's done, it shows a preview of the 3D model, allowing you to save it, and then deletes the temporary file
+When you pick a folder, it checks every photo and puts a badge on the blurry or low-res ones.
+
+When reconstruction starts, it first checks if your Mac supports photogrammetry. If it does, it creates a temporary folder, copies the photos from the grid into it, and starts reconstruction with the chosen quality preset. Once it's done, it deletes the copied photos and shows a preview of the 3D model, which you can save as a .usdz file. The model itself stays in the temporary folder until you start another reconstruction or the system clears it.
 
 ## Credits
 
